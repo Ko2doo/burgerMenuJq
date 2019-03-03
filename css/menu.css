@@ -1,0 +1,208 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+  color: #999;
+}
+
+.header{
+  width: 100%;
+  height: 112px;
+  background-color: #000;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-box-shadow: 5px 28px 28px -40px rgb(252, 172, 69);
+  box-shadow: 5px 28px 28px -40px rgb(252, 172, 69);
+}
+.header:hover{
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-box-shadow: 5px 28px 28px -36px rgb(252, 172, 69);
+  box-shadow: 5px 28px 28px -36px rgb(252, 172, 69);
+}
+.header-container{
+  margin-top: 35px;
+  padding: 0 130px 0 178px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+}
+/*header styles*/
+.header_logo p{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 200;
+  font-size: 24px;
+  cursor: pointer;
+}
+.header_logo span{
+  font-weight: 750;
+  margin-left: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #fff;
+}
+.header_logo{
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.header_logo:hover span{
+  margin-left: 5px;
+  color: #fcac45;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.header_logo:hover p{
+  color: #dbdbdb;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/**************** Навигация onn ****************/
+.navigation__links ul,li{
+  display: inline-block;
+}
+.navigation__links li,a{
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+}
+.navigation__links li a:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 0;
+  height: 100%;
+  border-bottom: 3px solid #fcac45;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.navigation__links li a:hover:before{
+  width: 100%;
+}
+.navigation__links li{
+  margin-left: 35px;
+}
+/**************** Навигация off *****************/
+
+
+/*********** бургер меню! ************/
+ .navigation__links ul.menu{
+  display: none;
+}
+ .navigation__links ul.menu.active{
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+ul.menu.active {
+  background: #1f1e1e;
+  z-index: 555;
+  padding: 70px 8px 65px 8px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-width: 165px;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 0;
+  animation: slide-burger-slide 1s;
+}
+ul.menu.close{
+  background: #1f1e1e;
+  z-index: 555;
+  padding: 70px 8px 65px 8px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-width: 165px;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 0;
+  display: inherit;
+  opacity: 0;
+  animation: slide-burger-slide-out 1s;
+}
+.menu.active li {
+  display: table;
+  padding: 15px 15px;
+  margin: 0;
+}
+.menu.close li {
+  display: table;
+  padding: 15px 15px;
+  margin: 0;
+}
+
+@keyframes slide-burger-slide{
+  0%{
+    left: -200px;
+    max-width: 0px;
+    opacity: 0.2;
+    -webkit-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100%{
+    max-width: 250px;
+    left: 0px;
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes slide-burger-slide-out{
+  0%{
+    left: 0;
+    max-width: 250px;
+    opacity: 12;
+    -webkit-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100%{
+    max-width: 0;
+    left: -200px;
+    opacity: 0;
+    display: none;
+    -webkit-animation-timing-function: ease-out;
+    -o-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/************************************************/
