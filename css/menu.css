@@ -10,6 +10,24 @@ li{
   color: #999;
 }
 
+/* Шрифты */
+@font-face {
+  font-family: Exo2-Regular;
+  src: url("../fonts/Exo2-Regular.ttf");
+}
+@font-face {
+  font-family: "Exo2-Light";
+  src: url("../fonts/Exo2-Light.ttf");
+}
+@font-face {
+  font-family: "Exo2-Black";
+  src: url("../fonts/Exo2-Black.ttf");
+}
+html, body {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+}
+
 .header{
   width: 100%;
   height: 112px;
@@ -22,18 +40,6 @@ li{
   -ms-align-items: center;
   align-items: center;
   position: relative;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  -webkit-box-shadow: 5px 28px 28px -40px rgb(252, 172, 69);
-  box-shadow: 5px 28px 28px -40px rgb(252, 172, 69);
-}
-.header:hover{
-  -webkit-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  -webkit-box-shadow: 5px 28px 28px -36px rgb(252, 172, 69);
-  box-shadow: 5px 28px 28px -36px rgb(252, 172, 69);
 }
 .header-container{
   margin-top: 35px;
@@ -83,11 +89,11 @@ li{
   transition: all 0.5s ease-in-out;
 }
 
-/**************** Навигация onn ****************/
+/**************** static-nav onn ****************/
 .navigation__links ul,li{
   display: inline-block;
 }
-.navigation__links li,a{
+.static-nav li,a{
   position: relative;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -96,7 +102,7 @@ li{
   font-size: 14px;
   color: #fff;
 }
-.navigation__links li a:before{
+.static-nav li a:before{
   content: '';
   position: absolute;
   left: 0;
@@ -107,16 +113,16 @@ li{
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.navigation__links li a:hover:before{
+.static-nav li a:hover:before{
   width: 100%;
 }
-.navigation__links li{
+.static-nav li{
   margin-left: 35px;
 }
-/**************** Навигация off *****************/
+/**************** static-nav off *****************/
 
 
-/*********** бургер меню! ************/
+/*********** burger-menu ************/
  .navigation__links ul.menu{
   display: none;
 }
@@ -167,6 +173,35 @@ ul.menu.close{
   padding: 15px 15px;
   margin: 0;
 }
+
+/* Hover effect's */
+.menu li,a{
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+}
+.menu li a:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 0;
+  height: 100%;
+  border-bottom: 3px solid #fcac45;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.menu li a:hover:before{
+  width: 100%;
+}
+.menu li{
+  margin-left: 35px;
+}
+
 
 @keyframes slide-burger-slide{
   0%{
